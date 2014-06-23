@@ -28,4 +28,7 @@
     </author>
     <content src="entertainme/mobile/login.html" />
     <access origin="*" />
+    <feature name="BackgroundServicePlugin">
+        <param name="android-package" value="com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin" />
+    </feature>
 </widget>

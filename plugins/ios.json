@@ -120,6 +120,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
+        },
+        "com.red_folder.phonegap.plugin.backgroundservice": {
+            "PACKAGE_NAME": "gla.ac.uk.entertainme"
         }
     },
     "dependent_plugins": {

@@ -15,6 +15,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.red_folder.phonegap.plugin.backgroundservice/www/backgroundservice.js",
+        "id": "com.red_folder.phonegap.plugin.backgroundservice.BackgroundService",
+        "clobbers": [
+            "window.plugins.BackgroundServices"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.device/www/device.js",
         "id": "org.apache.cordova.device.device",
         "clobbers": [
@@ -28,6 +35,7 @@ module.exports.metadata =
     "com.phonegap.plugins.facebookconnect": "0.5.1",
     "org.apache.cordova.geolocation": "0.3.9-dev",
     "de.appplant.cordova.plugin.local-notification": "0.7.4",
+    "com.red_folder.phonegap.plugin.backgroundservice": "3.3",
     "org.apache.cordova.device": "0.2.11-dev"
 }
 // BOTTOM OF METADATA
