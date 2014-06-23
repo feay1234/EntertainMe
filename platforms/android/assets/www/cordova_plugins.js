@@ -11,7 +11,8 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "com.phonegap.plugins.facebookconnect": "0.5.1"
+    "com.phonegap.plugins.facebookconnect": "0.5.1",
+    "org.apache.cordova.geolocation": "0.3.9-dev"
 }
 // BOTTOM OF METADATA
 });
