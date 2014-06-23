@@ -39,6 +39,10 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+            document.addEventListener('deviceready', function () {
+			    // window.plugin.notification.local is now available
+			    window.plugin.notification.local.add({ message: 'Great app!' });
+			}, false);
         </script>
     </body>
 </html>

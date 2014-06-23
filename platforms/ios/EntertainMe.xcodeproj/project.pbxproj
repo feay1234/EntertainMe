@@ -46,8 +46,8 @@
 		CFAA377483784352B0D76589 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565D111C90EC43C2AA47F01A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C3D17B9006364650BCBDE33D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EA760A850A4EDCA359D7C9 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6B78B3AA47A34F91AD427363 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A48FA53186D54D0F8B7EE563 /* CDVLocation.m */; };
-		46912FE8583C45428BF5786A /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A52E52122A4E5D9D44E630 /* CDVDevice.m */; };
-		6B456BF2DF5E44BB8465DE4F /* APPLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 283F07508AFF4186938784C7 /* APPLocalNotification.m */; };
+		898D79485E0D4C4D943ECC67 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49A892219746C4AFAE65A8 /* CDVDevice.m */; };
+		D1A4DA095F7D48F9B865E4B2 /* APPLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B67CB27DCE74A6AB4C3C4EB /* APPLocalNotification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,10 +122,10 @@
 		96EA760A850A4EDCA359D7C9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		A48FA53186D54D0F8B7EE563 /* CDVLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocation.m"; path = "org.apache.cordova.geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		740C1D33947048B08042C130 /* CDVLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocation.h"; path = "org.apache.cordova.geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		E4A52E52122A4E5D9D44E630 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		17C1FE26FABD43BE8ABBF1D5 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		283F07508AFF4186938784C7 /* APPLocalNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "APPLocalNotification.m"; path = "de.appplant.cordova.plugin.local-notification/APPLocalNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		C7273BAB49C74D2F95C93EEE /* APPLocalNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "APPLocalNotification.h"; path = "de.appplant.cordova.plugin.local-notification/APPLocalNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4A49A892219746C4AFAE65A8 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		CFBB26C1A1544048BC984256 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4B67CB27DCE74A6AB4C3C4EB /* APPLocalNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "APPLocalNotification.m"; path = "de.appplant.cordova.plugin.local-notification/APPLocalNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		8725AFFEEE354E4293AA3851 /* APPLocalNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "APPLocalNotification.h"; path = "de.appplant.cordova.plugin.local-notification/APPLocalNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,10 +262,10 @@
 				98B5AF14B74C4E99AE34D847 /* FacebookConnectPlugin.h */,
 				A48FA53186D54D0F8B7EE563 /* CDVLocation.m */,
 				740C1D33947048B08042C130 /* CDVLocation.h */,
-				E4A52E52122A4E5D9D44E630 /* CDVDevice.m */,
-				17C1FE26FABD43BE8ABBF1D5 /* CDVDevice.h */,
-				283F07508AFF4186938784C7 /* APPLocalNotification.m */,
-				C7273BAB49C74D2F95C93EEE /* APPLocalNotification.h */,
+				4A49A892219746C4AFAE65A8 /* CDVDevice.m */,
+				CFBB26C1A1544048BC984256 /* CDVDevice.h */,
+				4B67CB27DCE74A6AB4C3C4EB /* APPLocalNotification.m */,
+				8725AFFEEE354E4293AA3851 /* APPLocalNotification.h */,
 			);
 			name = Plugins;
 			path = "EntertainMe/Plugins";
@@ -462,8 +462,8 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				CC55C0D24B7D486893BFE821 /* FacebookConnectPlugin.m in Sources */,
 				6B78B3AA47A34F91AD427363 /* CDVLocation.m in Sources */,
-				46912FE8583C45428BF5786A /* CDVDevice.m in Sources */,
-				6B456BF2DF5E44BB8465DE4F /* APPLocalNotification.m in Sources */,
+				898D79485E0D4C4D943ECC67 /* CDVDevice.m in Sources */,
+				D1A4DA095F7D48F9B865E4B2 /* APPLocalNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
