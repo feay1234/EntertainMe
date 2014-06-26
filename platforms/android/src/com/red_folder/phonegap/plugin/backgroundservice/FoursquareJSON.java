@@ -40,38 +40,30 @@ public class FoursquareJSON {
 	    }
 //		Log.e("FoursquareJSON", id+" "+name+" "+category+" "+position.toString()+" "+distance+" "+first_image_url);
 		
-		double scoreFB = 0;
-		double scoreBH = 0;
+		double scoreFB = 2147483647;
+		double scoreBH = 2147483647;
 		
-		double min_score = 2147483647;
 		for (int i = 0; i < user_likes.length(); i++) {
-			Log.e("Facebook", user_likes.getJSONObject(i).getString("category")+"    "+category);
 			double score = DamerauLevenshteinAlgorithm.execute(category, user_likes.getJSONObject(i).getString("category"));
-			if(min_score < score){
-				min_score = score;
+			Log.e("scoreFB", score+"");
+			if(scoreFB > score){
+				scoreFB = score;
 			}
 		}
-		if(min_score != 2147483647){
-			scoreFB = min_score;
+		for (int i = 0; i < user_favorite.length(); i++) {
+			double score = DamerauLevenshteinAlgorithm.execute(category, user_favorite.getJSONObject(i).getString("category"));
+			Log.e("scoreFavorite", score+"");
+			if(scoreFB > score){
+				scoreFB = score;
+			}
 		}
-//		else{
-//			for (int i = 0; i < user_favorite.length(); i++) {
-//				double score = DamerauLevenshteinAlgorithm.execute(category, user_favorite.getJSONObject(i).getString("category"));
-//				if(min_score < score){
-//					min_score = score;
-//				}
-//			}
-//			scoreFB = min_score;
-//		}
-//		
-//		min_score = 2147483647;
-//		for (int i = 0; i < user_behaviour.length(); i++) {
-//			double score = DamerauLevenshteinAlgorithm.execute(category, user_behaviour.getJSONObject(i).getString("venue_category"));
-//			if(min_score < score){
-//				min_score = score;
-//			}
-//		}
-		scoreBH = min_score;
+		for (int i = 0; i < user_behaviour.length(); i++) {
+			double score = DamerauLevenshteinAlgorithm.execute(category, user_behaviour.getJSONObject(i).getString("venue_category"));
+			Log.e("scoreBH", score+"");
+			if(scoreBH > score){
+				scoreBH = score;
+			}
+		}
 //		Log.e("FoursquareJSON", scoreFB+" "+scoreBH);
 		Venue v = new Venue(id, name, category, distance, position, first_image_url, scoreFB, scoreBH);
 		return v;

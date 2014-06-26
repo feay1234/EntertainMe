@@ -1,30 +1,30 @@
 package com.red_folder.phonegap.plugin.backgroundservice;
 
-import java.text.SimpleDateFormat;
+import gla.ac.uk.entertainme.EntertainMe;
+import gla.ac.uk.entertainme.R;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Timer;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.annotation.SuppressLint;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.os.Looper;
-import android.os.Message;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-import android.widget.Toast;
-import gla.ac.uk.entertainme.R;
-
+import com.facebook.LoginActivity;
 import com.google.android.gms.maps.model.LatLng;
 import com.red_folder.phonegap.plugin.backgroundservice.MyLocation.LocationResult;
 
@@ -40,48 +40,33 @@ public class MyService extends BackgroundService {
 	private static JSONArray user_favorite = new JSONArray();
 	public static JSONArray user_likes = new JSONArray();
 	public static JSONArray user_behaviour = new JSONArray();
+	public Context context = this;
 	@Override
 	protected JSONObject doWork() {
 		JSONObject result = new JSONObject();
-
-		Log.e("Thread", "[{'category':'test'}]" );
-        Log.e("Thread", like_string.length()+"12");
-        try {
-//			user_likes = new JSONArray("[{'category':'test'}]");
-        	user_likes = new JSONArray(like_string);
+	
+        
+		try {
+			Log.e("fea", "dowork1");
+			
+			if(favorite_string.length() != 2){
+				Log.e("fea", favorite_string+"test");
+				Log.e("fea", ""+"test");
+				user_favorite = new JSONArray(favorite_string);
+			}
+			if(like_string.length() != 2){
+				Log.e("fea", "dowork2");
+				user_likes = new JSONArray(like_string);
+			}
+			if(behaviour_string.length() != 2){
+				Log.e("fea", "dowork3");
+				user_behaviour = new JSONArray(behaviour_string);
+			}
+			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        Log.e("Thread", behaviour_string);
-//		try {
-//			if(!favorite_string.equals("[]")){
-//				Log.e(TAG, favorite_string);
-//				user_favorite = new JSONArray(favorite_string);
-//				for (int i = 0; i < user_favorite.length(); i++) {
-////					Log.e(TAG, user_favorite.getJSONObject(i).getString("category"));
-////					JSONArray user_favorite = new JSONArray("[{'category':'test'}, {'category':'test2'}]");
-//				}
-//			}
-//			if(!like_string.equals("[]")){
-//				Log.e(TAG, like_string);
-//				user_likes = new JSONArray(like_string);
-//				for (int i = 0; i < user_likes.length(); i++) {
-////					Log.e(TAG, user_likes.getJSONObject(i).getString("category"));
-//				}
-//			}
-//			if(!behaviour_string.equals("[]")){
-//				Log.e(TAG, behaviour_string);
-//				user_behaviour = new JSONArray(behaviour_string);
-//				for (int i = 0; i < user_behaviour.length(); i++) {
-////					Log.e(TAG, user_behaviour.getJSONObject(i).getString("category"));
-//				}
-//			}
-//			
-//		} catch (JSONException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		
 		TrackerThread test = new TrackerThread();
 		test.run();
@@ -106,7 +91,10 @@ public class MyService extends BackgroundService {
 
 	@Override
 	protected void setConfig(JSONObject config) {
+    	
 		try {
+			
+			
 			if (config.has("user_favorite")){
 				favorite_string = config.getString("user_favorite");
 			}
@@ -139,7 +127,7 @@ public class MyService extends BackgroundService {
 
 	class TrackerThread extends Thread {
 	    public Handler mHandler;
-	    public int sleep_time = 5000;
+	    public int sleep_time = 30000;
 	    public int check = 1;
 	    public LatLng previous_location = new LatLng(55.8741905, -4.2922399);
 	    
@@ -159,8 +147,8 @@ public class MyService extends BackgroundService {
 	    					Log.e("Thread", location.getLatitude()+" "+location.getLongitude());
 	    					Log.e("Thread", "Distance :"+distance(previous_location.latitude, previous_location.longitude, current_location.latitude, current_location.longitude, 'M'));
 	    	                
-	    	                if(distance(previous_location.latitude, previous_location.longitude, location.getLatitude(), location.getLongitude(), 'M') < 0.1){
-	    	                	
+	    	                if(distance(previous_location.latitude, previous_location.longitude, location.getLatitude(), location.getLongitude(), 'M') <= 0.1){
+	    	                	previous_location = current_location;
 	    	                	new Foursquare(current_location){
     	                		  protected void onPostExecute(String results) {
       	                			  try {
@@ -176,11 +164,17 @@ public class MyService extends BackgroundService {
 											}
 											
 //											user favorite ranking
+											List<Venue> venue_list = new ArrayList();
 											for (int i = 0; i < venues.length(); i++) {
 												JSONObject venue = venues.getJSONObject(i).getJSONObject("venue");
 												Venue v = FoursquareJSON.parseFoursquareJSON(venue, user_favorite, user_likes, user_behaviour);
+												venue_list.add(v);
 	      									}
 											
+											venue_list = Venue.sortByBHFB(venue_list);
+											if(venue_list.size() >= 0){
+												sendNotification(venue_list.get(0).name, venue_list.get(0).distance, venue_list.get(0).first_image_url);
+											}
 											
       									
       	                			  } catch (JSONException e) {
@@ -195,8 +189,7 @@ public class MyService extends BackgroundService {
       	                		  
       	                	  }.execute();
 	    	                }
-	    					sendNotification("test",location.getLatitude());
-	    					sleep_time = 10000;
+	    					sleep_time = 60000;
 	    					check++;
 	    				}
 	    			};
@@ -216,7 +209,10 @@ public class MyService extends BackgroundService {
 	        
 	    }
 	    
-	    public void sendNotification(String name, double distance){
+	    @SuppressLint("NewApi")
+		public void sendNotification(String name, double distance, String url){
+	    	
+//	    	Bitmap bitmap = getBitmapFromURL(url);
 			NotificationCompat.Builder mBuilder =
 			        new NotificationCompat.Builder(getBaseContext())
 					.setSmallIcon(R.drawable.icon)
@@ -224,6 +220,24 @@ public class MyService extends BackgroundService {
 			        .setContentText("You may like to visit "+name+". it's just "+distance+" miles away from here");
 			
 			mBuilder.setAutoCancel(true);
+			
+			// Creates an explicit intent for an Activity in your app
+			Intent resultIntent = new Intent(context, EntertainMe.class);
+			// The stack builder object will contain an artificial back stack for the
+			// started Activity.
+			// This ensures that navigating backward from the Activity leads out of
+			// your application to the Home screen.
+			TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+			// Adds the back stack for the Intent (but not the Intent itself)
+			stackBuilder.addParentStack(EntertainMe.class);
+			// Adds the Intent that starts the Activity to the top of the stack
+			stackBuilder.addNextIntent(resultIntent);
+			PendingIntent resultPendingIntent =
+			        stackBuilder.getPendingIntent(
+			            0,
+			            PendingIntent.FLAG_UPDATE_CURRENT
+			        );
+			mBuilder.setContentIntent(resultPendingIntent);
 			
 			
 			NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -259,6 +273,22 @@ public class MyService extends BackgroundService {
 	    private double rad2deg(double rad) {
 	      	return (rad * 180.0 / Math.PI);
 	    }
+	    
+	    public Bitmap getBitmapFromURL(String strURL) {
+	        try {
+	            URL url = new URL(strURL);
+	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	            connection.setDoInput(true);
+	            connection.connect();
+	            InputStream input = connection.getInputStream();
+	            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+	            return myBitmap;
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            return null;
+	        }
+	    }
+	    
 	}
 
 }
