@@ -22,6 +22,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
+        "id": "plugin.google.maps.phonegap-googlemaps-plugin",
+        "clobbers": [
+            "window.plugins.phonegap-googlemaps-plugin"
+        ]
+    },
+    {
+        "file": "plugins/uk.co.ilee.nativetransitions/www/nativetransitions.js",
+        "id": "uk.co.ilee.nativetransitions.NativeTransitions",
+        "clobbers": [
+            "nativetransitions"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.device/www/device.js",
         "id": "org.apache.cordova.device.device",
         "clobbers": [
@@ -36,7 +50,11 @@ module.exports.metadata =
     "org.apache.cordova.geolocation": "0.3.9-dev",
     "de.appplant.cordova.plugin.local-notification": "0.7.4",
     "com.red_folder.phonegap.plugin.backgroundservice": "3.3",
-    "org.apache.cordova.device": "0.2.11-dev"
+    "plugin.google.maps": "1.1.2",
+    "uk.co.ilee.nativetransitions": "0.1.3",
+    "org.apache.cordova.device": "0.2.11-dev",
+    "com.google.playservices": "17.0.0",
+    "android.support.v4": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

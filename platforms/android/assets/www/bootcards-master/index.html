@@ -1,0 +1,177 @@
+<!-- Bootstrap CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootcards CSS for iOS: -->
+<link rel="stylesheet" href="bootcards-ios.min.css">
+
+
+<!-- Bootstrap and Bootcards JS -->
+<script src="bootstrap.min.js"></script>
+<script src="bootcards.min.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="js/googlemap.js" type="text/javascript"></script>
+
+<body>
+  <div class="container">
+    <div class="row" style="padding-top:10px;">
+      <div class="col-sm-5 bootcards-list">
+      
+        	<div class="panel panel-default">
+        	  <div class="panel-heading clearfix">
+        	    <h3 class="panel-title pull-left">Form Card Title</h3>
+        	    <div class="btn-group pull-right">
+        	      <button class="btn btn-danger">
+        	        <i class="fa fa-times"></i>
+        	        Cancel
+        	      </button>
+        	      <button class="btn btn-success">
+        	        <i class="fa fa-check"></i>
+        	        Save
+        	      </button>
+        	    </div>
+        	  </div>
+        	  <div class="modal-body">
+        	    <form class="form-horizontal">
+        	      <div class="form-group">
+        	        <label class="col-xs-3 control-label">Name</label>
+        	        <div class="col-xs-9">
+        	          <input type="text" class="form-control" value="John Smith">
+        	        </div>
+        	      </div>
+        	      <div class="form-group">
+        	        <label class="col-xs-3 control-label">Occupation</label>
+        	        <div class="col-xs-9">
+        	          <select class="form-control">
+        	            <option>Designer</option>
+        	            <option selected>Developer</option>
+        	            <option>Salesman</option>
+        	          </select>
+        	        </div>
+        	      </div>
+        	      <div class="form-group">
+        	        <label class="col-xs-3 control-label">Description</label>
+        	        <div class="col-xs-9">
+        	          <textarea class="form-control" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris tellus, vehicula ut tellus id, suscipit dapibus tortor. Integer viverra turpis ac fringilla hendrerit. Sed faucibus posuere felis et pellentesque. Cras varius tortor vitae molestie tempor. Proin ut viverra elit, ac gravida tortor.</textarea>
+        	        </div>
+        	      </div>
+        	    </form>
+        	  </div>
+        	  <div class="panel-footer">
+        	    <small>Built with Bootcards - Form Card</small>
+        	  </div>
+        	</div>
+        	<div class="list-group">
+
+        	  <a class="list-group-item" href="/companies/id">
+
+        	    <div class="row">
+        	      <div class="col-sm-6">
+        	        <i class="fa fa-3x fa-building-o pull-left"></i>
+        	        <h4 class="list-group-item-heading">Name</h4>
+        	        <p class="list-group-item-text">City, Country</p>
+        	      </div>
+        	      <div class="col-sm-6">
+        	        <p class="list-group-item-text">Type</p>
+        	        <p class="list-group-item-text">Revenue</p>
+        	      </div>
+        	    </div>
+
+        	  </a>
+
+        	  <a class="list-group-item" href="/companies/id">
+
+        	    <div class="row">
+        	      <div class="col-sm-6">
+        	        <i class="fa fa-3x fa-building-o pull-left"></i>
+        	        <h4 class="list-group-item-heading">Name</h4>
+        	        <p class="list-group-item-text">City, Country</p>
+        	      </div>
+        	      <div class="col-sm-6">
+        	        <p class="list-group-item-text">Type</p>
+        	        <p class="list-group-item-text">Revenue</p>
+        	      </div>
+        	    </div>
+
+        	  </a>
+
+        	  ...
+
+        	</div>
+        
+      </div>
+      <div class="col-sm-7 bootcards-cards">
+      
+        ...your Bootcards Cards go here...
+        <div class="modal fade in" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal">
+        <div class="modal-header">
+          <button class="btn btn-danger pull-left" data-dismiss="modal">
+            Cancel
+          </button>
+          <button type="submit pull-right" class="btn btn-success">
+            Save
+          </button>
+          <h3 class="modal-title">New Company</h3>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="col-xs-3 control-label">Name</label>
+            <div class="col-xs-9">
+              <input type="text" name="name" class="form-control" placeholder="Company Name" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-3 control-label">Type</label>
+            <div class="col-xs-9">
+              <select name="type" class="form-control" value="">
+                <option value="" selected="">Select a Type...</option>
+                <option value="Prospect">Prospect</option>
+                <option value="Customer">Customer</option>
+                <option value="Inactive">Inactive</option>
+             </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Location</label>
+          <div class="col-xs-9">
+             <input type="text" name="location" class="form-control" placeholder="Location" value="">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <small class="pull-left">Built with Bootcards - Form Card</small>
+    <a href="#" class="btn btn-link btn-xs pull-right">View Source</a>
+  </div>
+</div>
+        
+      </div>
+      <div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="btn-group">
+      <a href="#" class="btn btn-default active">
+        <i class="fa fa-2x fa-users"></i>
+        Contacts
+      </a>
+      <a href="#" class="btn btn-default">
+        <i class="fa fa-2x fa-building-o"></i>
+        Companies
+      </a>
+      <a href="#" class="btn btn-default">
+        <i class="fa fa-2x fa-gears"></i>
+        Settings
+      </a>
+    </div>
+    <div class="bootcards-desktop-footer clearfix">
+      <p class="pull-left">Text for desktop footer goes here</p>
+      <p class="pull-left">More text for desktop footer goes here</p>
+   </div>
+  </div>
+</div>
+    </div>
+  </div>
+</body>

@@ -34,6 +34,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        var map = plugin.google.maps.Map.getMap();
+        map.addEventListener(plugin.google.maps.event.MAP_READY, function(map) {
+                             // The map is initialized, then show a map dialog
+                             map.showDialog();
+                             });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

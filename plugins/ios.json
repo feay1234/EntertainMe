@@ -7,33 +7,75 @@
         "files": {
             "framework": {
                 "parents": {
-                    "libsqlite3.dylib": [
+                    "AVFoundation.framework": [
                         {
                             "xml": "false",
                             "count": 1
                         }
                     ],
-                    "Social.framework": [
+                    "CoreData.framework": [
                         {
-                            "xml": "true",
+                            "xml": "false",
                             "count": 1
                         }
                     ],
-                    "Accounts.framework": [
+                    "CoreLocation.framework": [
                         {
-                            "xml": "true",
+                            "xml": "false",
                             "count": 1
                         }
                     ],
-                    "AdSupport.framework": [
+                    "CoreText.framework": [
                         {
-                            "xml": "true",
+                            "xml": "false",
                             "count": 1
                         }
                     ],
-                    "Security.framework": [
+                    "GLKit.framework": [
                         {
-                            "xml": "true",
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "ImageIO.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libc++.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libicucore.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "OpenGLES.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "QuartzCore.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "false",
                             "count": 1
                         }
                     ]
@@ -43,43 +85,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"GoogleMaps\"><param name=\"ios-package\" value=\"GoogleMaps\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://m.facebook.com\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://graph.facebook.com\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://api.facebook.com\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" onload=\"true\" value=\"APPLocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"NativeTransitions\"><param name=\"ios-package\" value=\"NativeTransitions\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -87,21 +97,9 @@
             },
             "*-Info.plist": {
                 "parents": {
-                    "FacebookAppID": [
+                    "Google Maps API Key": [
                         {
-                            "xml": "<string>552167728198735</string>",
-                            "count": 1
-                        }
-                    ],
-                    "FacebookDisplayName": [
-                        {
-                            "xml": "<string>EntertainMe</string>",
-                            "count": 1
-                        }
-                    ],
-                    "CFBundleURLTypes": [
-                        {
-                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb552167728198735</string></array></dict></array>",
+                            "xml": "<string>AIzaSyALLuZkfbWKOivPw0twBRXC8mZDBlysY9c</string>",
                             "count": 1
                         }
                     ]
@@ -110,24 +108,22 @@
         }
     },
     "installed_plugins": {
-        "com.phonegap.plugins.facebookconnect": {
-            "APP_ID": "552167728198735",
-            "APP_NAME": "EntertainMe",
+        "android.support.v4": {
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
         },
-        "org.apache.cordova.geolocation": {
+        "com.google.playservices": {
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
         },
-        "de.appplant.cordova.plugin.local-notification": {
+        "com.googlemaps.ios": {
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
         },
-        "com.red_folder.phonegap.plugin.backgroundservice": {
+        "plugin.google.maps": {
+            "API_KEY_FOR_IOS": "AIzaSyALLuZkfbWKOivPw0twBRXC8mZDBlysY9c",
+            "PACKAGE_NAME": "gla.ac.uk.entertainme"
+        },
+        "uk.co.ilee.nativetransitions": {
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
         }
     },
-    "dependent_plugins": {
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "gla.ac.uk.entertainme"
-        }
-    }
+    "dependent_plugins": {}
 }
