@@ -18,7 +18,9 @@
 
     
     <script src="js/home.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+    <script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
     
   </head>
   <body onload="init();">
@@ -26,6 +28,7 @@
     <!-- Make sure all your bars are the first things in your <body> -->
     <header class="bar bar-nav">
       <a id="backBtn" class="icon icon-left-nav pull-left"></a>
+      <a class="icon icon-gear pull-right" href="#settingsModal"></a>
       <h1 class="title">Entertain Me</h1>
     </header>
 
@@ -82,9 +85,65 @@
           </li>
 
         </ul>
+        <a href="#myModalexample" class="btn">Open modal</a>
+        <div id="myModalexample" class="modal">
+          <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#myModalexample"></a>
+            <h1 class="title">Modal</h1>
+          </header>
+
+          <div class="content">
+            <p class="content-padded">The contents of my modal go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="detail-content">
+          More Detali
+          <p id="name1"></p>
+      </div>
+
+
+    </div>
+    <div id="settingsModal" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#settingsModal"></a>
+        <h1 class="title">Settings</h1>
+      </header>
+      <div class="content">
+        <form class="input-group">
+          <input type="text" placeholder="Full name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Username">
+        </form>
+
+        <h5 class="content-padded">App settings</h5>
+
+        <ul class="table-view">
+          <li class="table-view-cell media">
+            <span class="media-object pull-left icon icon-sound"></span>
+            <div class="media-body">
+              Enable sounds
+            </div>
+            <div class="toggle">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+          <li class="table-view-cell media">
+            <span class="media-object pull-left icon icon-person"></span>
+            <div class="media-body">
+              Parental controls
+            </div>
+            <div class="toggle">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="content-padded">
+          <button class="btn btn-positive btn-block">Save settings</button>
+        </div>
       </div>
     </div>
-
   </body>
 
 </html>

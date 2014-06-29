@@ -2,12 +2,16 @@ var map;
 
 function initCardListener(){
 	$(".card").click(function(){
-		alert($(this).attr("venue-id"))
+		var venue_id = $(this).attr("venue-id");
+
+		// animation
 	    map.setVisible(false);
 	    $("#main-content").hide(); 
 	    $("#backBtn").show();  
+	    $("#detail-content").show();
 
 	    // More detail JS
+	    $("#name1").text(venue_id);
 
 	})
 }
@@ -18,14 +22,18 @@ function init() {
 
 	$("#backBtn").click(function(){
 		$("#backBtn").hide();
+		$("#detail-content").hide();
 		$("#main-content").show();   
 		map.setVisible(true);
-		$(".name").text("dlkjf")
 	})
 
 	$("#backBtn").hide();
+    $("#detail-content").hide();
+
 	
 }
+
+
 
 
 function onDeviceReady() {
@@ -56,6 +64,7 @@ function onDeviceReady() {
 		
 		var url = window.location.pathname;
 		if( getPageName(url) == "home"){
+			$("#detail-content").show();
 			map.setVisible(true);
 			$("#main-content").show(); 
 
@@ -65,6 +74,7 @@ function onDeviceReady() {
 			$("#backBtn").hide();  
 			map.setVisible(false);
 			// Profile JS here.
+
 		}
 
 		initCardListener();
