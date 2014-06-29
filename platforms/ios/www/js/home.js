@@ -1,13 +1,37 @@
+var map;
+
+function initCardListener(){
+	$(".card").click(function(){
+		alert($(this).attr("venue-id"))
+	    map.setVisible(false);
+	    $("#main-content").hide(); 
+	    $("#backBtn").show();  
+
+	    // More detail JS
+
+	})
+}
 function init() {
 	document.addEventListener("deviceready", onDeviceReady, false);
+
+	initCardListener();
+
+	$("#backBtn").click(function(){
+		$("#backBtn").hide();
+		$("#main-content").show();   
+		map.setVisible(true);
+		$(".name").text("dlkjf")
+	})
+
+	$("#backBtn").hide();
+	
 }
 
 
 function onDeviceReady() {
-//	startRatchet();
-	var current_page = "home";
+
 	var div = document.getElementById('map_canvas');
-	var map = plugin.google.maps.Map.getMap(div);
+	map = plugin.google.maps.Map.getMap(div);
 	map.on(plugin.google.maps.event.MAP_READY, function() {
 	  
 	  map.addMarker({
@@ -20,6 +44,7 @@ function onDeviceReady() {
 	  
 	});
 
+
 	function getPageName(url) {
 	    var index = url.lastIndexOf("/") + 1;
 	    var filenameWithExtension = url.substr(index);
@@ -28,19 +53,27 @@ function onDeviceReady() {
 	}
 
 	function test(){
-
+		
 		var url = window.location.pathname;
 		if( getPageName(url) == "home"){
 			map.setVisible(true);
+			$("#main-content").show(); 
+
 		}
 		else{
+			$("#main-content").hide();
+			$("#backBtn").hide();  
 			map.setVisible(false);
+			// Profile JS here.
 		}
+
+		initCardListener();
 		
 	}
 
 	window.addEventListener('push', test);
 
+	
 }
 
 
