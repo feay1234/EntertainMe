@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript">
-    var map;
-    document.addEventListener("deviceready", function() {
+    <meta charset="utf-8">
+    <title>EntertainMe</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-        var duration = 2, // animation time in seconds
-            direction = "right"; // animation direction - left || right
-        setTimeout(function() {
-            // Change your html here
-            location.replace("http://www.w3schools.com")
-        }, 50);
-        nativetransitions.curl(duration, direction);      
+    <link rel="stylesheet" href="ratchet/css/ratchet.min.css">
+    <link rel="stylesheet" href="index.css">   
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
 
-      // var button = document.getElementById("button");
-      // button.addEventListener("click", onBtnClicked, false);
-
-      // var div = document.getElementById("map_canvas");
-      // map = plugin.google.maps.Map.getMap(div);
-    }, false);
-    function onBtnClicked() {
-      map.showDialog();
-    }
+    <script src="ratchet/js/ratchet.min.js"></script>
     
+    <script type="text/javascript">
+        app.initialize();
     </script>
   </head>
   <body>
+    <header class="bar bar-nav" style="display:none;">
+      <h1 class="title">EntermainMe</h1>
+    </header>
 
-
-    <h3>PhoneGap-GoogleMaps-Plugin</h3>
-    <div style="width:100%;height:400px" id="map_canvas"></div>
-    <button id="button">Full Screen</button>
+    <nav class="bar bar-tab">
+      <a id="homeBtn" class="tab-item active" href="#">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">Home</span>
+      </a>
+      <a id="profileBtn" class="tab-item" href="#">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-star-filled"></span>
+        <span class="tab-label">Favorites</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-search"></span>
+        <span class="tab-label">Search</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Settings</span>
+      </a>
+    </nav>
+    
+    <div class="content">
+      <div id="home-content">
+          <div id='map_canvas' style='width:100%;height:150px;'></div>
+          <ul id="venues-list" class="table-view">
+          </ul>
+      </div>
+      <div id="profile-content" style="display:none;">
+          profile
+      </div>
+      <div id="detail-content" style="display:none;">
+          More Detali
+          <p id="name1"></p>
+      </div>
+      
+    </div>
   </body>
 </html>

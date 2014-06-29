@@ -14,6 +14,12 @@ function initCardListener(){
 	    $("#name1").text(venue_id);
 
 	})
+
+	$("#profileBtn").click(function(){
+		$("#profile-content").fadeIn( "slow", function() {
+		    // Animation complete
+	  	});
+	})
 }
 function init() {
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -30,7 +36,7 @@ function init() {
 	$("#backBtn").hide();
     $("#detail-content").hide();
 
-	
+
 }
 
 
@@ -41,7 +47,7 @@ function onDeviceReady() {
 	var div = document.getElementById('map_canvas');
 	map = plugin.google.maps.Map.getMap(div);
 	map.on(plugin.google.maps.event.MAP_READY, function() {
-	  
+
 	  map.addMarker({
 	    'position': new plugin.google.maps.LatLng(0, 0),
 	    'title': ["Hello Google Map", "for", "Apache Cordova!"].join("\n"),
@@ -49,7 +55,7 @@ function onDeviceReady() {
 	  }, function(marker) {
 	    marker.showInfoWindow();
 	  });
-	  
+
 	});
 
 
@@ -61,9 +67,10 @@ function onDeviceReady() {
 	}
 
 	function test(){
-		
+
 		var url = window.location.pathname;
 		if( getPageName(url) == "home"){
+			$("#detail-content").hide();
 			$("#detail-content").show();
 			map.setVisible(true);
 			$("#main-content").show(); 
@@ -78,13 +85,10 @@ function onDeviceReady() {
 		}
 
 		initCardListener();
-		
+
 	}
 
 	window.addEventListener('push', test);
 
-	
+
 }
-
-
-
