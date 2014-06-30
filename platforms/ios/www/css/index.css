@@ -1,7 +1,4 @@
-#profile-content {
-  display: none;
-}
-
-#detail-content {
-  display: none;
+.media-object .pull-left {
+	padding: 0px;
+	margin: 0px;
 }

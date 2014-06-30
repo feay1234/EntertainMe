@@ -78,6 +78,36 @@
                             "xml": "false",
                             "count": 1
                         }
+                    ],
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "Social.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "Accounts.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "AdSupport.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "Security.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -91,6 +121,34 @@
                         {
                             "xml": "<feature name=\"NativeTransitions\"><param name=\"ios-package\" value=\"NativeTransitions\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -100,6 +158,24 @@
                     "Google Maps API Key": [
                         {
                             "xml": "<string>AIzaSyALLuZkfbWKOivPw0twBRXC8mZDBlysY9c</string>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookAppID": [
+                        {
+                            "xml": "<string>552167728198735</string>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookDisplayName": [
+                        {
+                            "xml": "<string>EntertainMe</string>",
+                            "count": 1
+                        }
+                    ],
+                    "CFBundleURLTypes": [
+                        {
+                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb552167728198735</string></array></dict></array>",
                             "count": 1
                         }
                     ]
@@ -122,6 +198,11 @@
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
         },
         "uk.co.ilee.nativetransitions": {
+            "PACKAGE_NAME": "gla.ac.uk.entertainme"
+        },
+        "com.phonegap.plugins.facebookconnect": {
+            "APP_ID": "552167728198735",
+            "APP_NAME": "EntertainMe",
             "PACKAGE_NAME": "gla.ac.uk.entertainme"
         }
     },

@@ -81,5 +81,18 @@
     <string>0.0.1</string>
     <key>Google Maps API Key</key>
     <string>AIzaSyALLuZkfbWKOivPw0twBRXC8mZDBlysY9c</string>
+    <key>FacebookAppID</key>
+    <string>552167728198735</string>
+    <key>FacebookDisplayName</key>
+    <string>EntertainMe</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb552167728198735</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>

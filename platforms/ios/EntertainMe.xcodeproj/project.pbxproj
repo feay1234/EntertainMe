@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		027ED9278A324BC1900B59D9 /* Polygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C0D91A26D492987D7EFC9 /* Polygon.m */; };
 		040BB41F8A4C462796252A31 /* Geocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 697F17946119473F9E536F77 /* Geocoder.m */; };
@@ -68,6 +67,13 @@
 		F132FF13BCDE4FE8A5CABDF7 /* TileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF832ECE614ECDB531BE2D /* TileOverlay.m */; };
 		F551C44B8AF64BEF8DA4F04A /* GoogleMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C600C40224753AD15D254 /* GoogleMapsViewController.m */; };
 		FE93D9563E51429D8C829C34 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712E5F5E0F8844BFA322D292 /* GLKit.framework */; };
+		D77FD8E1562747DD826D6C77 /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5635928104FF3890BDCDC /* FacebookConnectPlugin.m */; };
+		08699C7322274236AC8C5BC4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB48E17545349C79DFB056B /* FacebookSDK.framework */; };
+		CC39D34778CB45B1845B63DD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 935A72C522294EA592565417 /* libsqlite3.dylib */; };
+		1B0455557EE24670B92AAACD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33E5A429EE1441A813FB75F /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CDF2E13C409F4E928C5C69B6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA33B1A1A2A4300BA9EF310 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FB713A1061F84329A0FAFAC0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDD5BCD482B4C6B8B8FBE20 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5418B919DE384280B47F0CF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8E15AC22C442A1B94BAB08 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +185,14 @@
 		FA4E55C9B6CF4B849B924A76 /* External.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = External.m; path = plugin.google.maps/External.m; sourceTree = "<group>"; };
 		FAD719D818B6487581A28684 /* CoreData.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FB514D6972834EEDA8980E67 /* NativeTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeTransitions.m; path = uk.co.ilee.nativetransitions/NativeTransitions.m; sourceTree = "<group>"; };
+		5EA5635928104FF3890BDCDC /* FacebookConnectPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "FacebookConnectPlugin.m"; path = "com.phonegap.plugins.facebookconnect/FacebookConnectPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		525A5FEDFD7E437A8BC8BD25 /* FacebookConnectPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FacebookConnectPlugin.h"; path = "com.phonegap.plugins.facebookconnect/FacebookConnectPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		8DB48E17545349C79DFB056B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "FacebookSDK.framework"; path = "EntertainMe/Plugins/com.phonegap.plugins.facebookconnect/FacebookSDK.framework"; sourceTree = "<group>"; };
+		935A72C522294EA592565417 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsqlite3.dylib"; path = "usr/lib/libsqlite3.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
+		B33E5A429EE1441A813FB75F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		2EA33B1A1A2A4300BA9EF310 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Accounts.framework"; path = "System/Library/Frameworks/Accounts.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		7EDD5BCD482B4C6B8B8FBE20 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		5C8E15AC22C442A1B94BAB08 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +217,12 @@
 				9CDAB1C6132E4B8A9646D354 /* OpenGLES.framework in Frameworks */,
 				5F7866BE8C5849F1A2B037B1 /* QuartzCore.framework in Frameworks */,
 				65D53D1F99CD4FEEB54E56E9 /* SystemConfiguration.framework in Frameworks */,
+				08699C7322274236AC8C5BC4 /* FacebookSDK.framework in Frameworks */,
+				CC39D34778CB45B1845B63DD /* libsqlite3.dylib in Frameworks */,
+				1B0455557EE24670B92AAACD /* Social.framework in Frameworks */,
+				CDF2E13C409F4E928C5C69B6 /* Accounts.framework in Frameworks */,
+				FB713A1061F84329A0FAFAC0 /* AdSupport.framework in Frameworks */,
+				5418B919DE384280B47F0CF8 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +329,12 @@
 				D023F5047D0942CCA51A050F /* OpenGLES.framework */,
 				BDB89730E2C942D68C765009 /* QuartzCore.framework */,
 				6B3C613CF66043A2B019365B /* SystemConfiguration.framework */,
+				8DB48E17545349C79DFB056B /* FacebookSDK.framework */,
+				935A72C522294EA592565417 /* libsqlite3.dylib */,
+				B33E5A429EE1441A813FB75F /* Social.framework */,
+				2EA33B1A1A2A4300BA9EF310 /* Accounts.framework */,
+				7EDD5BCD482B4C6B8B8FBE20 /* AdSupport.framework */,
+				5C8E15AC22C442A1B94BAB08 /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -358,6 +384,8 @@
 				42EEDA919E384778BDFD9EE1 /* NSData+Base64.podspec */,
 				FB514D6972834EEDA8980E67 /* NativeTransitions.m */,
 				839A4F92D8324CA58A5F6C09 /* NativeTransitions.h */,
+				5EA5635928104FF3890BDCDC /* FacebookConnectPlugin.m */,
+				525A5FEDFD7E437A8BC8BD25 /* FacebookConnectPlugin.h */,
 			);
 			name = Plugins;
 			path = EntertainMe/Plugins;
@@ -569,6 +597,7 @@
 				F132FF13BCDE4FE8A5CABDF7 /* TileOverlay.m in Sources */,
 				6BCCDC8484554382BA40381E /* NSData+Base64.m in Sources */,
 				D054350287CF4558A02F64F0 /* NativeTransitions.m in Sources */,
+				D77FD8E1562747DD826D6C77 /* FacebookConnectPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +656,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"EntertainMe/Plugins/com.googlemaps.ios\"",
+					"\"EntertainMe/Plugins/com.phonegap.plugins.facebookconnect\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -664,6 +694,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"EntertainMe/Plugins/com.googlemaps.ios\"",
+					"\"EntertainMe/Plugins/com.phonegap.plugins.facebookconnect\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EntertainMe/EntertainMe-Prefix.pch";
