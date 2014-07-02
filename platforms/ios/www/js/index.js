@@ -303,7 +303,6 @@ var app = {
                 current_btn = $("#"+page+"Btn");
             }  
             $("#homeBtn").click(function(){
-                
                 change_page("home");
             })
             $("#profileBtn").click(function(){
