@@ -32,7 +32,7 @@ function createVenueCard(venue, tips, scoreFB, scoreBH, i){
                                 "</div>"+
                                 "<div class='swipeout-actions'>"+
                                   "<div class='swipeout-actions-inner'>"+
-                                    "<a href='#'>Invite</a>"+
+                                    "<a href='invite.html?venue_id="+id+"' style='background-color:#0BD318'>Invite</a>"+
                                     "<a href='detail.html'>Detail</a>"+
                                   "</div>"+
                                 "</div>"+

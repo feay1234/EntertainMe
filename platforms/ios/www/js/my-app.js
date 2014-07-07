@@ -68,16 +68,16 @@ function onDeviceReady() {
           // $$('.popup-about').on('close', function () {
           // });
 
-          $$('#tab1').on('show', function () {
+          $$('#mapTab').on('show', function () {
               map.setVisible(true)
 
           });
            
-          $$('#tab2').on('show', function () {
+          $$('#profileTab').on('show', function () {
               map.setVisible(false)
           });
            
-          $$('#tab3').on('show', function () {
+          $$('#friendTab').on('show', function () {
               map.setVisible(false)
 
           });   
@@ -99,6 +99,7 @@ function onDeviceReady() {
       }
       else if (page.name == 'invite'){
         map.setVisible(false);
+        // alert(page.query.venue_id);
       }
     })
 

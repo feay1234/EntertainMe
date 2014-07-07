@@ -31,7 +31,7 @@
 
     	<div class="tabs">
 
-    	  <div class="tab active" id="tab1">
+    	  <div class="tab active" id="mapTab">
 
     	    <div class="list-block media-list" style="padding:0px;">
     	  		
@@ -42,7 +42,7 @@
     	    </div> 
     	  </div>
 
-    	  <div class="tab" id="tab2">
+    	  <div class="tab" id="profileTab">
             <div class="list-block media-list" style="margin-bottom:0px;">
               <ul>
                   <li>
@@ -59,15 +59,15 @@
                         <div class="item-subtitle">
                             <div class="row">
                               <div class="col-33">
-                                  <div class='profile-large-text'>468</div>
+                                  <div class='profile-large-text'>45</div>
                                   <div class='profile-small-text'>Friends</div>
                               </div>
                               <div class="col-33">
-                                  <div class='profile-large-text'>468</div>
+                                  <div class='profile-large-text'>23</div>
                                   <div class='profile-small-text'>Visited</div>
                               </div>
                               <div class="col-33">
-                                  <div class='profile-large-text'>468</div>
+                                  <div class='profile-large-text'>2000</div>
                                   <div class='profile-small-text'>Point</div>
                               </div>
                             </div>
@@ -77,41 +77,41 @@
                   </li>                         
               </ul>
             </div>     
-            <div class="row profile-row" >
-              <div class="col-50">
-                <a href="#favoriteTab" class="tab-link button active">Favorite</a>
-              </div>
-              <div class="col-50">
-                <a href="#bookmarkTab" class="tab-link button">Bookmark</a>
-              </div>
-              
-            </div>          
-            <hr>
-            <div class="tabs">
-              <div class="tab active" id="favoriteTab">
-                  <div class="list-block media-list">
-                    <ul>
+            <div class="buttons-row" style="padding:8px 3px;">
+              <!-- Link to 1st tab, active -->
+              <a href="#favoriteTab" class="tab-link active button">Tab 1</a>
+              <!-- Link to 2nd tab -->
+              <a href="#bookmarkTab" class="tab-link button">Tab 2</a>
+              <!-- Link to 3rd tab -->
+              <a href="#tab3" class="tab-link button">Tab 3</a>
+            </div>
+            <div class="tabs" style="margin-top:0px;">
+              <div class="tab active" id="favoriteTab" style="margin:0px;">
+
+                  <div class="list-block media-list" style="padding:0px;">
+                    <ul style="padding:0px;">
                       <li>
                         <a href="#" class="item-link item-content">
-                          <div class="item-media"><img src="..." width="80"></div>
-                          <div class="item-inner">
-                            <div class="item-title-row">
-                              <div class="item-title">Yellow Submarine</div>
-                              <div class="item-after">$15</div>
+                            <div class="item-media">
+                                <img src="http://lorempixel.com/44/44/people/" width="44">
                             </div>
-                            <div class="item-subtitle">Beatles</div>
-                            <div class="item-text">Lorem ipsum dolor sit amet...</div>
-                          </div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="item-title">Yellow Submarine</div>
+                              </div>
+                              <div class="item-subtitle">Beatles</div>
+                            </div>
                         </a>
                       </li>
-                      ...
                     </ul>
                   </div>
+
               </div>
               <div class="tab" id="bookmarkTab">
                 ... Tab 2 content goes here ...
               </div>
             </div> 
+            
     	    	<!-- <div class="page-content" style="padding-top:0px;">
               <div class="list-block media-list" >
                 <ul>
@@ -150,35 +150,24 @@
 
     	  </div>
 
-    	  <div class="tab" id="tab3">
-    	    <div class="content-block-title">Something more simple</div>
+    	  <div class="tab" id="friendTab">
             <div class="list-block media-list">
               <ul>
                 <li>
-                    <a href="chat.html?name=feay" class="item-link item-content">
-                      <div class="item-content">
-                        <div class="item-media"><img src="..." width="44"></div>
-                        <div class="item-inner">
-                          <div class="item-title-row">
-                            <div class="item-title">Yellow Submarine</div>
-                          </div>
-                          <div class="item-subtitle">Beatles</div>
+                  <a href="chat.html?name=feay" class="item-link item-content">
+                      <div class="item-media">
+                          <img src="http://lorempixel.com/44/44/people/" width="44">
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title">Yellow Submarine</div>
                         </div>
+                        <div class="item-subtitle">Beatles</div>
                       </div>
-                    </a>
+                  </a>
                 </li>
-                <li>
+                
 
-                  <div class="item-content">
-                    <div class="item-media"><img src="..." width="44"></div>
-                    <div class="item-inner">
-                      <div class="item-title-row">
-                        <div class="item-title">Yellow Submarine</div>
-                      </div>
-                      <div class="item-subtitle">Beatles</div>
-                    </div>
-                  </div>
-                </li>
               </ul>
             </div>
     	  </div>
@@ -194,27 +183,17 @@
 
     <div class="toolbar tabbar tabbar-labels">
 	    <div class="toolbar-inner">
-	        <a href="#tab1" class="tab-link active">
+	        <a href="#mapTab" class="tab-link active">
+	            <i class="icon ion-map size-32"></i>
+	        </a>
+	        <a href="#profileTab" class="tab-link">
 	            <i class="icon ion-ios7-contact size-32"></i>
-	            <!-- <span class="tabbar-label">Home</span> -->
 	        </a>
-	        <a href="#tab2" class="tab-link">
-	            <span class="step size-32">
-                  <i class="icon ion-ios7-contact"></i>
-              </span>
-	            <span class="tabbar-label">Profile</span>
-	        </a>
-	        <a href="#tab3" class="tab-link">
-	            <span class="step size-32">
-                  <i class="icon ion-ios7-contact"></i>
-              </span>
-	            <span class="tabbar-label">Friends</span>
+	        <a href="#friendTab" class="tab-link">
+	            <i class="icon ion-ios7-people size-32"></i>
 	        </a>
 	        <a href="#tab4" class="tab-link">
-              <span class="step size-32">
-                  <i class="icon ion-ios7-contact"></i>
-              </span>
-	            <span class="tabbar-label">Label 4</span>
+              <i class="icon ion-ios7-gear size-32"></i>
 	        </a>
 	    </div>
 	</div>
