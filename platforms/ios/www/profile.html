@@ -1,54 +1,71 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <!-- Sets initial viewport load and disables zooming  -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-
-    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <!-- Include the compiled Ratchet CSS -->
-    <link href="css/ratchet.css" rel="stylesheet">
-    <link href="css/ratchet-theme-ios.min.css" rel="stylesheet">
-
-    <script type="text/javascript">
-    </script>
-  </head>
-  <body>
-    <header class="bar bar-nav">
-      <h1 class="title">Profile</h1>
-    </header>
-    <nav class="bar bar-tab">
-      <a class="tab-item" href="home.html" data-transition="fade">
-        <span class="icon icon-home"></span>
-        <span class="tab-label">Home</span>
-      </a>
-      <a class="tab-item active">
-        <span class="icon icon-person"></span>
-        <span class="tab-label">Profile</span>
-      </a>
-      <a class="tab-item" href="#">
-        <span class="icon icon-star-filled"></span>
-        <span class="tab-label">Favorites</span>
-      </a>
-      <a class="tab-item" href="#">
-        <span class="icon icon-search"></span>
-        <span class="tab-label">Search</span>
-      </a>
-      <a class="tab-item" href="#">
-        <span class="icon icon-gear"></span>
-        <span class="tab-label">Settings</span>
-      </a>
-    </nav>
-
-
-    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-    <div class="content">
-      <p class="name"></p>
-      asdf
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon icon-back-blue"></i>
+        <span>Back</span>
+       </a>
     </div>
-
-  </body>
-</html>
+    <div class="center sliding">Profile</div>
+    <div class="right">
+      <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="about" class="page">
+    <div class="page-content">
+        <div class="list-block media-list">
+          <ul>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><img src="..." width="80"></div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">Yellow Submarine</div>
+                    <div class="item-after">$15</div>
+                  </div>
+                  <div class="item-subtitle">Beatles</div>
+                  <div class="item-text">Lorem ipsum dolor sit amet...</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="content-block-title">Another ultra long content block title</div>
+        <div class="content-block">
+            <!-- We specify target sortable list in data-sortable attribute  -->
+            <p><a href="#" data-sortable=".sortable" class="open-sortable">Enable sortable</a></p>
+            <p><a href="#" data-sortable=".sortable" class="close-sortable">Disable sortable</a></p>
+            <p><a href="#" data-sortable=".sortable" class="toggle-sortable">Toggle sortable</a></p>
+        </div>
+        <!-- Sortable list  -->
+        <div class="list-block sortable">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Item 1</div>
+                    <div class="item-after">$10</div>
+                  </div>
+                </div>
+                <!-- Sortable handler  -->
+                <div class="sortable-handler"></div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Item 2</div>
+                    <div class="item-after">$20</div>
+                  </div>
+                </div>
+                <div class="sortable-handler"></div>
+              </li>
+              ...
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>       

@@ -110,10 +110,9 @@ function addFavorite(list, id){
 // add user behaviour to the database
 // click event increments 1 point, more detail event increament 2 points
 function insertLogBehaviour(user_id, action, venue_category, weight){
-	
   	query = "q={'behaviour.venue_category': '"+venue_category+"'}";
   	$.ajax( { url: "https://api.mongolab.com/api/1/databases/"+database+"/collections/"+log_collection+"?"+query+"&apiKey="+key,
- 			  data: JSON.stringify({ "$inc" : {"behaviour.$.count" : weight}, "$set" :{"behaviour.$.latest_datetimed" : new Date}}),
+ 			  data: JSON.stringify({ "$inc" : {"behaviour.$.count" : weight}, "$set" :{"behaviour.$.latest_datetime" : new Date}}),
  			  type: "PUT",
  			  contentType: "application/json",
  			  success: function (result) {
@@ -131,7 +130,7 @@ function insertLogBehaviour(user_id, action, venue_category, weight){
  			  					  contentType: "application/json",
  			  					  success: function (result) {
  			  					  	// redirect to index.html
-
+ 			  					  	// alert(JSON.stringify(result));
  			  		             }
  			  		            }); 
  			  	}
