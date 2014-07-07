@@ -3,11 +3,8 @@ body {
 }
 .navbar {
   border-bottom: none;
-  /*background: #74baee;
-  color: #ffffff;*/
-
-  background: #cc0442;
-  color: #fff;
+  background: #74baee;
+  color: #ffffff;
 }
 .navbar a.link {
   color: #ffffff;

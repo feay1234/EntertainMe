@@ -53,13 +53,19 @@
 			</div>
 			<div class="pages">
 				<div data-page="list" class="page">
-					
+					<!-- Search bar -->
+					<form class="searchbar" data-search-list=".contacts-list" data-search-in=".item-title">
+						<div class="searchbar-input">
+							<input type="search" placeholder="Search">
+							<a href="#" class="searchbar-clear"></a>
+						</div>
+						<a href="#" class="searchbar-cancel">Cancel</a>
+					</form>
 
 					<!-- Search bar overlay-->
 					<div class="searchbar-overlay"></div>
 
                     <div class="page-content">
-                    	<div id='map_canvas' style='width:100%;height:150px;padding:0px;margin:0px;'></div>
                         <div class="list-block media-list contacts-list searchbar-found">
 							<div class="list-group">
                             	<ul></ul>
@@ -78,18 +84,3 @@
 <script type="text/javascript" src="lib/lodash.js"></script>
 <script type="text/javascript" src="lib/framework7.js"></script>
 <script data-main="app" src="lib/require.js"></script>
-
-<script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript">
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        function onDeviceReady() {
-            var div = document.getElementById('map_canvas');
-            map = plugin.google.maps.Map.getMap(div);
-            map.addEventListener(plugin.google.maps.event.MAP_READY, function(map)
-            {           
-              // The map is initialized, then show a map dialog
-            });
-        }
-
-    </script>
