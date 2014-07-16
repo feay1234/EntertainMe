@@ -11,9 +11,9 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title label">Username</div>
+                <div class="item-title label">Email</div>
                 <div class="item-input">
-                  <input type="text" placeholder="Username">
+                  <input id="emailInput" type="email" placeholder="Email">
                 </div>
               </div>
             </div>
@@ -23,20 +23,7 @@
               <div class="item-inner">
                 <div class="item-title label">Password</div>
                 <div class="item-input">
-                  <input type="password" placeholder="Password">
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Auto Login</div>
-                <div class="item-input">
-                  <label class="label-switch">
-                    <input type="checkbox">
-                    <div class="checkbox"></div>
-                  </label>
+                  <input id="passwordInput" type="password" placeholder="Password">
                 </div>
               </div>
             </div>
@@ -47,16 +34,31 @@
       <div class="list-block inset">
         <ul>
           <li>
-            <a href="#" class="item-link list-button button-submit">Login</a>
+            <a onclick="loginByPassword()" href="#" class="item-link list-button button-submit">Login</a>
           </li>
           <li>
-            <a href="#" class="item-link list-button">Register</a>
+            <a href="register.html" class="item-link list-button">Register</a>
           </li>
           <li>
-            <a href="#" class="item-link list-button">Login via Facebook Account</a>
+            <a onclick="loginByFacebook()" href="#" class="item-link list-button">Login via Facebook Account</a>
+          </li>
+          <li>
+            <a onclick="loginByGoogle()" href="#" class="item-link list-button">Login via Google+ Account</a>
+          </li>
+          <li>
+            <a onclick="loginByTwitter()" href="#" class="item-link list-button">Login via Twitter Account</a>
+          </li>
+          <li>
+            <a onclick="logout()" href="#" class="item-link list-button">logout</a>
           </li>
         </ul>
       </div>
 
   </div>
 </div>       
+
+<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+
+<script src="js/login.js"></script>

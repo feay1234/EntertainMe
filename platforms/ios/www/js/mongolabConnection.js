@@ -3,6 +3,8 @@ var key = "b4YbDG1AmDjaOGJbt2EdAS8kbziufur0";
 var database = "entertainme";
 var user_collection = "User";
 var log_collection = "Log";
+var chat_collection = "Chat";
+var invite_collection = "Invitation";
 
 // Register.html
 // Login.html << Facebook
@@ -153,5 +155,7 @@ function getUserFavorite(username){
 			  contentType: "application/json"
 	        }); 
 }
+
+	
 
 

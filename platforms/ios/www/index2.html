@@ -1,0 +1,62 @@
+<a href="#" class="button" id="sendBtn" >send message</a>
+
+
+<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+	
+	var user1 = 'coco';
+	var user2 = 'feay1234';
+
+	function create_new_chat_room(user1, user2){
+		var createRoomRef = new Firebase("https://entertainme.firebaseIO.com/chat/room/"+user1+"_"+user2);
+
+		createRoomRef.set({
+		  start_chat: Firebase.ServerValue.TIMESTAMP,
+		});
+	}
+
+	function messageListener(user1, user2){
+		var room_name = user1+"_"+user2;
+		var roomRef = new Firebase('https://entertainme.firebaseIO.com/chat/room/'+room_name);
+
+		roomRef.once('value', function(dataSnapshot) {
+
+			if(dataSnapshot.val() == null){
+				room_name = user2+"_"+user1;
+				roomRef = new Firebase('https://entertainme.firebaseIO.com/chat/room/'+room_name);
+			}
+
+			roomRef.on('child_added', function(childSnapshot, prevChildName) {
+				var sender = childSnapshot.child('name').val();
+				if(sender != null && sender != user1){
+					// alert(sender);
+				}
+			});
+		});
+	}
+
+	
+
+	function sendMessage(sender, room_name, message){
+		var sendRef = new Firebase('https://entertainme.firebaseIO.com/chat/room/'+room_name)
+
+		sendRef.push({
+			name: sender,
+			message: 'Hello World!1232',
+		  	datetime: Firebase.ServerValue.TIMESTAMP,
+		  	location: 'San Francisco'
+		});
+	}
+
+	$("#sendBtn").click(function(){
+		sendMessage(user1, user2+"_"+user1, "test1")
+	})
+
+	messageListener(user1, user2)
+	
+	
+	
+</script>

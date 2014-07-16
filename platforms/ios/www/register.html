@@ -11,9 +11,9 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title label">Name</div>
+                <div class="item-title label">Username</div>
                 <div class="item-input">
-                  <input type="text" placeholder="Your name">
+                  <input id="usernameRInput" type="text" placeholder="Username">
                 </div>
               </div>
             </div>
@@ -21,9 +21,9 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title label">E-mail</div>
+                <div class="item-title label">Email</div>
                 <div class="item-input">
-                  <input type="email" placeholder="E-mail">
+                  <input id="emailRInput" type="email" placeholder="Email">
                 </div>
               </div>
             </div>
@@ -31,47 +31,9 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title label">Gender</div>
+                <div class="item-title label">Password</div>
                 <div class="item-input">
-                  <select>
-                    <option>Male</option>
-                    <option>Female</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Birth date</div>
-                <div class="item-input">
-                  <input type="date" placeholder="Birth day" value="2014-04-30">
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Switch</div>
-                <div class="item-input">
-                  <label class="label-switch">
-                    <input type="checkbox">
-                    <div class="checkbox"></div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Slider</div>
-                <div class="item-input">
-                  <div class="range-slider">
-                    <input type="range" min="0" max="100" value="50" step="0.1">
-                  </div>
+                  <input id="passwordRInput" type="password" placeholder="Password">
                 </div>
               </div>
             </div>
@@ -81,7 +43,7 @@
       <div class="list-block inset">
         <ul>
           <li>
-            <a href="#" class="button button-big button-submit">Register</a>
+            <a href="#" onclick="register()" class="button button-big button-submit">Register</a>
           </li>
           <li>
             <a href="#" class="button button-big button-cancel">Cancel</a>
@@ -90,3 +52,9 @@
     </div>
   </div>
 </div>       
+
+<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+
+<script src="js/login.js"></script>

@@ -1,38 +1,178 @@
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="left">
-      <a href="#" class="back link">
-        <i class="icon icon-back-white"></i>
-        <span style="color:#fff;">Back</span>
-       </a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>EntertainMe</title>
+    <link rel="stylesheet" href="css2/framework7.min.css">
+    <link rel="stylesheet" href="css/my-app.css">
+    <link href="css/ionicons.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body>
+    <div class="views">
+      <div class="view view-main">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center" id="headerName"></div>
+          </div>
+        </div>
+        <div class="pages">
+          <div data-page="chat" class="page toolbar-fixed">
+            <!-- Messages content -->
+            <div class="page-content messages-content">
+                <div class="messages">
+
+                </div>
+              </div>
+            <!-- Custom toolbar -->
+            <div class="toolbar">
+              <form class="toolbar-inner">
+                <input type="text" placeholder="Message" class="message-text" id="chatInput">
+                <a id="chatSubmitBtn" href="#" class="link sent-message">Send</a>
+              </form>
+            </div>
+          </div> 
+        </div>      
+
+      </div>
+
+      </div>
+
+
     </div>
-    <div id="name" class="center sliding">Friend's Name</div>
-    <div class="right">
-      <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-white"></i></a>
-    </div>
-  </div>
-</div>
-<div class="pages">
-  <div data-page="chat" class="page toolbar-fixed">
-  <!-- Messages content -->
-  <div class="page-content messages-content">
-    <div class="messages">
-      <div class="messages-date">Sunday, Feb 9 <span>12:58</span></div>
-      <div class="message message-sent">Hello</div>
-      <div class="message message-sent">How are you?</div>
-      <div class="message message-received">I am fine, thanks</div>
-      <div class="messages-date">Sunday, Feb 3 <span>11:58</span></div>
-      <div class="message message-sent">Nice photo?</div>
-      <div class="message message-sent message-pic"><img src="http://lorempixel.com/300/300/"></div>
-      <div class="message message-received">Wow, awesome!</div>
-    </div>
-  </div>
-  <!-- Custom toolbar -->
-  <div class="toolbar">
-    <form class="toolbar-inner">
-      <input type="text" placeholder="Message" class="message-text">
-      <a href="#" class="link sent-message">Send</a>
-    </form>
-  </div>
-</div> 
-</div>          
+    <script type="text/javascript" src="js2/framework7.min.js"></script>
+     <script type="text/javascript" src="js/jquery.min.js"></script>
+     <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+      <script src="js/highcharts.js"></script>
+      <script src="exporting.js"></script>
+      <script src="js/highchart.js"></script>
+      <script src="js/mongolabConnection.js"></script>
+      <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+      <script type="text/javascript">
+
+          var myApp = new Framework7();
+           
+          var $$ = Framework7.$;
+
+          var user1 = "feay1234";
+          var user2 = "coco";
+          var room_name = "";
+          $("#headerName").text(user2);
+
+
+
+
+          function create_new_chat_room(user1, user2){
+            var createRoomRef = new Firebase("https://entertainme.firebaseIO.com/chat/room/"+user1+"_"+user2);
+
+            createRoomRef.set({
+              start_chat: Firebase.ServerValue.TIMESTAMP,
+            });
+          }
+
+
+          function messageListener(user1, user2){
+
+            room_name = user1+"_"+user2;
+            var roomRef = new Firebase('https://entertainme.firebaseIO.com/chat/room/'+room_name);
+
+
+
+            roomRef.once('value', function(dataSnapshot) {
+
+              if(dataSnapshot.val() == null){
+                room_name = user2+"_"+user1;
+                roomRef = new Firebase('https://entertainme.firebaseIO.com/chat/room/'+room_name);
+              }
+              roomRef.on('child_added', function(childSnapshot, prevChildName) {
+                  var sender = childSnapshot.child('name').val();
+                  var message = childSnapshot.child('message').val();
+                  if(sender != null){
+                    alert(sender != user1)
+                    if (sender != user1) {
+                        avatar = 'http://lorempixel.com/output/people-q-c-100-100-9.jpg';
+                        myApp.addMessage({
+                          // Message text
+                          text: message,
+                          // Random message type
+                          type: 'received',
+                          // Avatar and name:
+                          avatar: avatar,
+                          name: sender
+                        })
+                    }
+
+                    else{
+                        alert(sender);
+
+                        myApp.addMessage({
+                          // Message text
+                          text: message,
+                          // Random message type
+                          type: 'sent',
+                          // Avatar and name:
+                          name: sender
+                        })
+                    }
+                }
+              });
+            });
+          }
+
+          function sendMessage(sender, room_name, message){
+            alert(room_name);
+            // var sendRef = new Firebase('https://entertainme.firebaseIO.com/chat/room/'+room_name)
+
+            // sendRef.push({
+            //   name: sender,
+            //   message: 'Hello World!1232',
+            //     datetime: Firebase.ServerValue.TIMESTAMP,
+            //     location: 'San Francisco'
+            // });
+          }
+
+          messageListener(user1+'_'+user2)
+
+
+
+
+          // Handle message
+          $("#chatSubmitBtn").click(function(){
+            var textarea = $$('.messagebar textarea');
+            // Message text
+            var messageText = $("#chatInput").val();
+            // Exit if empy message
+            if (messageText.length === 0) return;
+           
+            // Empty textarea
+            textarea.val('').trigger('change');
+            sendMessage(user1, room_name, messageText);
+
+          });
+
+          
+
+          var commentsRef = new Firebase("https://entertainme.firebaseio.com/");
+
+          var auth = new FirebaseSimpleLogin(commentsRef, function(error, user) {
+            if (!error) {
+              // Success!
+            }
+          });
+
+          auth.login('facebook', {
+
+          });
+          alert(auth.id);
+
+      </script>
+      
+      </body>
+</html>
+
+
+
+

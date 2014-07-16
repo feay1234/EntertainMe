@@ -14,7 +14,7 @@ var venues = [];
 var mode = "facebook";
 var map;
 var mainView;
-
+var from_third_page = false;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -30,7 +30,8 @@ function onDeviceReady() {
     // Add view
     mainView = myApp.addView('.view-main', {
       // Because we want to use dynamic navbar, we need to enable it for this view:
-      dynamicNavbar: true
+      dynamicNavbar: true,
+      cache: true,
     });
      
     // Now we need to run the code that will be executed only for About page.
@@ -52,6 +53,29 @@ function onDeviceReady() {
         // Following code will be executed for page with data-page attribute equal to "about"
       }
       else if (page.name == 'home') {
+
+          if (from_third_page){
+            for(var i = 0; i < venues.length; i++){
+                createVenueCard(venues[i].object.venue, venues[i].object.tips,venues[i].scoreFB, venues[i].scoreBH, i);
+            }
+            map.setVisible(true);
+          }
+
+          $$('.notification-callback').on('click', function () {
+                map.setVisible(false);
+                  myApp.addNotification({
+                      title: "Let's go to Brel Bar",
+                      subtitle: 'New invitation from Anna Jone',
+                      message: 'Hey Tom. Would you like to join us for a dinner?',
+                      media: '<img width="44" height="44" style="border-radius:100%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">',
+                      onClose: function () {
+                          map.setVisible(true);
+                      },
+                      onClick: function(){
+                      }
+                  });
+              });
+
           $$('.open-about').on('click', function () {
             // map.setVisible(false);
             myApp.popup('.popup-about');
@@ -75,12 +99,91 @@ function onDeviceReady() {
            
           $$('#profileTab').on('show', function () {
               map.setVisible(false)
+
+              // Swipe & Sort feature
+              var check_swipe = false;
+              $(".swipe-trigle-sort").click(function(){
+                  check_swipe = true;
+                  myApp.swipeoutClose(".swipeout")
+              })
+              
+              $(".swipe-click-sort").click(function(){
+                  myApp.sortableClose('.sortable');
+
+              })
+
+              $$('.swipeout').on('open', function () {
+                  check_swipe = false;
+              }); 
+
+              $$('.swipeout').on('closed', function () {
+                  if(check_swipe){
+                      myApp.sortableOpen('.sortable');
+                      check_swipe = false;
+                  };
+              });
+
+              // createGraph();
+
           });
            
           $$('#friendTab').on('show', function () {
               map.setVisible(false)
 
+              myApp.onPageBeforeRemove('chat', function (page) {
+
+                  map.setVisible(false);
+              });
+
           });   
+
+
+
+          $$('#settingTab').on('show', function () {
+              map.setVisible(false)
+
+              $$('.confirm-title-ok').on('click', function () {
+                  myApp.confirm('Are you sure?', 'Logout', function () {
+                      // myApp.alert('You clicked Ok button');
+                      logout();
+                  });
+              });
+
+              $$('.notification-default').on('click', function () {
+                  myApp.addNotification({
+                      title: 'Framework7',
+                      message: 'This is a simple notification message with title and message'
+                  });
+              });
+              $$('.notification-full').on('click', function () {
+                  myApp.addNotification({
+                      title: 'Framework7',
+                      subtitle: 'Notification subtitle',
+                      message: 'This is a simple notification message with custom icon and subtitle',
+                      media: '<i class="icon icon-f7"></i>'
+                  });
+              });
+              $$('.notification-custom').on('click', function () {
+                  myApp.addNotification({
+                      title: 'My Awesome App',
+                      subtitle: 'New message from John Doe',
+                      message: 'Hello, how are you? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut posuere erat. Pellentesque id elementum urna, a aliquam ante. Donec vitae volutpat orci. Aliquam sed molestie risus, quis tincidunt dui.',
+                      media: '<img width="44" height="44" style="border-radius:100%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">'
+                  });
+              });
+              $$('.notification-callback').on('click', function () {
+                  myApp.addNotification({
+                      title: 'My Awesome App',
+                      subtitle: 'New message from John Doe',
+                      message: 'Hello, how are you? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut posuere erat. Pellentesque id elementum urna, a aliquam ante. Donec vitae volutpat orci. Aliquam sed molestie risus, quis tincidunt dui.',
+                      media: '<img width="44" height="44" style="border-radius:100%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">',
+                      onClose: function () {
+                      }
+                  });
+              });
+
+          });   
+
 
           $$('.popup-about').on('opened', function () {
               
@@ -94,16 +197,37 @@ function onDeviceReady() {
         // Following code will be executed for page with data-page attribute equal to "about"
       }
       else if (page.name == 'chat'){
+
           var page = e.detail.page;
+          from_third_page = false;
           $("#name").text(page.query.name);
+      }
+      else if (page.name == 'search_friend'){
+        // map.setVisible(false);
+        // $(".back").click(function(){
+        //       map.setVisible(true);
+        //       $(".media-list").show();
+
+        // }) 
       }
       else if (page.name == 'invite'){
         map.setVisible(false);
         // alert(page.query.venue_id);
       }
+      else if (page.name == 'invite_message'){
+          from_third_page = true;
+      }
+      else if (page.name == 'login'){
+          
+      }
+      else if (page.name == 'detail_invite'){
+      }
     })
 
     
+    myApp.onPageAfterAnimation('detail_invite', function(){
+          createGraph();
+    })
 
 
 
@@ -167,9 +291,7 @@ function onDeviceReady() {
 
                 navigator.geolocation.getCurrentPosition(onSuccess, onError);
       }
-      else{
-        map.setVisible(true);
-      }
+      
     }) 
 
 
@@ -178,8 +300,31 @@ function onDeviceReady() {
         
     }
 
-    function gotoLogin(){
+    function gotoLoginPage(){
         mainView.loadPage('login.html')
+    }
+
+    function loginFB(){
+        var fbLoginSuccess = function (userData) {
+            getUserData();
+        }
+
+        facebookConnectPlugin.login(["basic_info"],
+            fbLoginSuccess,
+            function (error) { alert("" + error) }
+        );
+    }
+
+    function logout(){
+      facebookConnectPlugin.logout( 
+          function (response) { 
+              alert(response);
+          },
+          function (response) { 
+              // No Facebook Access Token
+              // Do nothing
+          }
+      );
     }
 
     function getUserData(){
@@ -239,19 +384,12 @@ function onDeviceReady() {
               }); 
     }
 
-    facebookConnectPlugin.getLoginStatus( 
-        function (response) { 
-            // Got Facebook Access Token
-            // mainView.loadPage('home.html');
-            getUserData();
-            
-        },
-        function (response) { 
-            // No Facebook Access Token
-            // Do nothing
-            gotoLogin();
-        }
-    );
+    facebookConnectPlugin.getAccessToken(function(token) {
+        getUserData();
+    }, function(err) {
+        gotoLoginPage();
+    });
+
 
 }
 

@@ -9,16 +9,7 @@
   background: #FF2A68;
 }
 */
-.modal-inner {
-  background: #0BD318;
-  color: #fff;
-  border-bottom: 1px solid #9a0332;
-}
-.modal-button {
-  background: #0BD318;
-  border-right-color: #9a0332;
-  color: #fff;
-}
+
 
 /*.statusbar-overlay {
     background: #FF2A68;
@@ -167,4 +158,30 @@ hr{
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.image { 
+   position: relative; 
+   padding-top: 40px;
+   width: 100%; /* for IE 6 */
+}
+
+h2 { 
+   position: absolute; 
+   top: 120px; 
+   left: 0; 
+   width: 100%; 
+}
+
+h2 span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+}
+
+h2 span.spacer {
+   padding:0 5px;
 }

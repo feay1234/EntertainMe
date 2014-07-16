@@ -21,77 +21,347 @@
 	<div class="navbar">
 	  <div class="navbar-inner">
         <div class="left">
-          <a href="invite.html"><i class="icon icon-bars-white"></i></a>
+          <!-- <a class="notification-callback"><i class="icon icon-bars-white"></i></a> -->
+          <a href="search_friend.html">
+            add
+          </a>
         </div>
 	    <div class="center sliding">EntertainMe</div>
+
+      <div class="right">
+          <!-- venues details -->
+          <a href="detail_invite.html">
+            <i class="icon icon-bars-white"></i>
+          </a>
+      </div>
 	  </div>
 	</div>
-  <div data-page="home" class="page">
-    <div class="page-content" style="padding-top:9px;">
+  <div class="pages">
+    <div data-page="home" class="page">
+      <div class="page-content" style="padding-top:9px;">
 
-    	<div class="tabs">
+        <!-- <div class="tabs-animated-wrap"> -->
+        	<div class="tabs">
 
-    	  <div class="tab active" id="mapTab">
+        	  <div class="tab active" id="mapTab">
 
-    	    <div class="list-block media-list" style="padding:0px;">
-    	  		
-		      	<div id='map_canvas' style='width:100%;height:150px;'></div>
-    	      	<ul id="venues_list">
-    	      	    
-	      	  	</ul>
-    	    </div> 
-    	  </div>
+        	    <div class="list-block media-list" style="padding:0px;">
+        	  		
+    		      	<div id='map_canvas' style='width:100%;height:150px;'></div>
+        	      	<ul id="venues_list">
+        	      	    
+    	      	  	</ul>
+        	    </div> 
+        	  </div>
 
-    	  <div class="tab" id="profileTab">
-            <div class="list-block media-list" style="margin-bottom:0px;">
-              <ul>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media">
-                          <div class="circular"></div>
-                      </div>
-                      <div class="item-inner">
+        	  <div class="tab" id="profileTab">
+                <div class="list-block media-list" style="margin-bottom:0px;">
+                  <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                              <div class="circular"></div>
+                          </div>
+                          <div class="item-inner">
 
-                        <div class="item-title-row" style="padding-top:20px;">
-                          <div class="profile-name">Jarana Manotumruksa</div>
+                            <div class="item-title-row" style="top:20px;">
+                              <div class="profile-name">Jarana Manotumruksa</div>
+                            </div>
+                            <hr>
+                            <div class="item-subtitle">
+                                <div class="row">
+                                  <div class="col-33">
+                                      <div class='profile-large-text'>45</div>
+                                      <div class='profile-small-text'>Friends</div>
+                                  </div>
+                                  <div class="col-33">
+                                      <div class='profile-large-text'>23</div>
+                                      <div class='profile-small-text'>Visited</div>
+                                  </div>
+                                  <div class="col-33">
+                                      <div class='profile-large-text'>2000</div>
+                                      <div class='profile-small-text'>Point</div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
                         </div>
-                        <hr>
-                        <div class="item-subtitle">
-                            <div class="row">
-                              <div class="col-33">
-                                  <div class='profile-large-text'>45</div>
-                                  <div class='profile-small-text'>Friends</div>
+                      </li>                         
+                  </ul>
+                </div>     
+                <div class="buttons-row" style="padding:8px 3px;">
+                  <!-- Link to 1st tab, active -->
+                  <a href="#favoriteTab" class="tab-link active button">Favorite</a>
+                  <!-- Link to 2nd tab -->
+                  <a href="#bookmarkTab" class="tab-link button">Bookmark</a>
+                  <!-- Link to 3rd tab -->
+                  <a href="#preferenceTab" class="tab-link button">Preference</a>
+                </div>
+                <div class="tabs" style="margin-top:0px;">
+                  <div class="tab active" id="favoriteTab" style="margin:0px;">
+
+                      <div class="list-block media-list" style="padding:0px;">
+                        <ul style="padding:0px;">
+                          <li>
+                            <a href="#" class="item-link item-content">
+                                <div class="item-media">
+                                    <img src="http://lorempixel.com/44/44/people/" width="44">
+                                </div>
+                                <div class="item-inner">
+                                  <div class="item-title-row">
+                                    <div class="item-title">Yellow Submarine</div>
+                                  </div>
+                                  <div class="item-subtitle">Beatles</div>
+                                </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                  </div>
+                  <div class="tab" id="bookmarkTab">
+                      <div class="list-block">
+                          <div id="container" style="width: 100%; height: 200px; margin: 0 auto">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="tab" id="preferenceTab">
+
+                      <div class="list-block sortable">
+                          <ul>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                            <li class="swipeout">
+                              <a href="#" class='swipe-click-sort'>
+                                <div class="swipeout-content item-content">
+                                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Another item</div>
+                                    <div class="item-after">Another label</div>
+                                  </div>
+                                </div>
+                                <div class="swipeout-actions">
+                                  <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipe-trigle-sort">Set Priority</a>
+                                    <a href="#" class="swipeout-delete">Delete</a>
+                                  </div>
+                                </div>
+                                <div class="sortable-handler"></div>
+                              </a>
+                            </li>
+                          </ul>
+                      </div>
+                      
+                  </div>
+                     
+                </div> 
+                
+
+
+        	    	<!-- <div class="page-content" style="padding-top:0px;">
+                  <div class="list-block media-list" >
+                    <ul>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-media"><img src="http://lorempixel.com/100/100/" width="88"></div>
+                            <div class="item-inner">
+
+                              <div class="item-title-row">
+                                <div class="item-title">Jarana Manotumruksa</div>
                               </div>
-                              <div class="col-33">
-                                  <div class='profile-large-text'>23</div>
-                                  <div class='profile-small-text'>Visited</div>
-                              </div>
-                              <div class="col-33">
-                                  <div class='profile-large-text'>2000</div>
-                                  <div class='profile-small-text'>Point</div>
+                              <hr>
+                              <div class="item-subtitle">
+                                  <div class="row">
+                                    <div class="col-33">
+                                      <div class='large-text'>468</div>
+                                      <div class='small-text'>Posts</div>
+                                    </div>
+                                    <div class="col-33">
+                                        <div>468</div>
+                                        <div>Posts</div>
+                                    </div>
+                                    <div class="col-33">
+                                        c
+                                    </div>
+                                  </div>
+                                  d
                               </div>
                             </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>                         
-              </ul>
-            </div>     
-            <div class="buttons-row" style="padding:8px 3px;">
-              <!-- Link to 1st tab, active -->
-              <a href="#favoriteTab" class="tab-link active button">Tab 1</a>
-              <!-- Link to 2nd tab -->
-              <a href="#bookmarkTab" class="tab-link button">Tab 2</a>
-              <!-- Link to 3rd tab -->
-              <a href="#tab3" class="tab-link button">Tab 3</a>
-            </div>
-            <div class="tabs" style="margin-top:0px;">
-              <div class="tab active" id="favoriteTab" style="margin:0px;">
+                          </div>
+                        </li>                  
+                    </ul>
+                  </div>            
+                </div> -->
+               
 
-                  <div class="list-block media-list" style="padding:0px;">
-                    <ul style="padding:0px;">
-                      <li>
-                        <a href="#" class="item-link item-content">
+        	  </div>
+
+        	  <div class="tab" id="friendTab">
+                
+                <div class="list-block media-list">
+                  <ul>
+                    <li>
+                        <a href="chat.html?name=feay" class="item-link item-content">
                             <div class="item-media">
                                 <img src="http://lorempixel.com/44/44/people/" width="44">
                             </div>
@@ -104,98 +374,96 @@
                         </a>
                       </li>
                     </ul>
-                  </div>
+                </div>
+        	  </div>
 
-              </div>
-              <div class="tab" id="bookmarkTab">
-                ... Tab 2 content goes here ...
-              </div>
-            </div> 
-            
-    	    	<!-- <div class="page-content" style="padding-top:0px;">
-              <div class="list-block media-list" >
-                <ul>
+            <div class="tab" id="settingTab">
+                <div class="content-block-title">Icons and inputs</div>
+                <div class="list-block">
+                  <ul>
                     <li>
                       <div class="item-content">
-                        <div class="item-media"><img src="http://lorempixel.com/100/100/" width="88"></div>
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
                         <div class="item-inner">
-
-                          <div class="item-title-row">
-                            <div class="item-title">Jarana Manotumruksa</div>
-                          </div>
-                          <hr>
-                          <div class="item-subtitle">
-                              <div class="row">
-                                <div class="col-33">
-                                  <div class='large-text'>468</div>
-                                  <div class='small-text'>Posts</div>
-                                </div>
-                                <div class="col-33">
-                                    <div>468</div>
-                                    <div>Posts</div>
-                                </div>
-                                <div class="col-33">
-                                    c
-                                </div>
-                              </div>
-                              d
+                          <div class="item-input">
+                            <select>
+                              <option>Male</option>
+                              <option>Female</option>
+                            </select>
                           </div>
                         </div>
                       </div>
-                    </li>                  
-                </ul>
-              </div>            
-            </div> -->
-           
-
-    	  </div>
-
-    	  <div class="tab" id="friendTab">
-            <div class="list-block media-list">
-              <ul>
-                <li>
-                  <a href="chat.html?name=feay" class="item-link item-content">
-                      <div class="item-media">
-                          <img src="http://lorempixel.com/44/44/people/" width="44">
-                      </div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">Yellow Submarine</div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="date" placeholder="Birth day" value="2014-04-30">
+                          </div>
                         </div>
-                        <div class="item-subtitle">Beatles</div>
                       </div>
-                  </a>
-                </li>
-                
-
-              </ul>
+                    </li>
+                 
+                    <!-- Switch (Checkbox) -->
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <label class="label-switch">
+                              <input type="checkbox">
+                              <div class="checkbox"></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                 
+                    <!-- Slider (Range input) -->
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <div class="range-slider">
+                              <input type="range" min="0" max="100" value="50" step="0.1">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div> 
+                <a href="#" class="button button-big button-cancel confirm-title-ok">Logout</a>   
             </div>
-    	  </div>
-    	</div>  
-          
+        	</div>  
+        <!-- </div> -->
+            
+        
+
+      </div>
+
+
+
       
 
+      <div class="toolbar tabbar tabbar-labels">
+  	    <div class="toolbar-inner">
+  	        <a href="#mapTab" class="tab-link active">
+  	            <i class="icon ion-map size-32"></i>
+  	        </a>
+  	        <a href="#profileTab" class="tab-link">
+  	            <i class="icon ion-ios7-contact size-32"></i>
+  	        </a>
+  	        <a href="#friendTab" class="tab-link">
+  	            <i class="icon ion-ios7-people size-32"></i>
+  	        </a>
+  	        <a href="#settingTab" class="tab-link">
+                <i class="icon ion-ios7-gear size-32"></i>
+  	        </a>
+  	    </div>
+  	 </div>
     </div>
-
-
-
-    
-
-    <div class="toolbar tabbar tabbar-labels">
-	    <div class="toolbar-inner">
-	        <a href="#mapTab" class="tab-link active">
-	            <i class="icon ion-map size-32"></i>
-	        </a>
-	        <a href="#profileTab" class="tab-link">
-	            <i class="icon ion-ios7-contact size-32"></i>
-	        </a>
-	        <a href="#friendTab" class="tab-link">
-	            <i class="icon ion-ios7-people size-32"></i>
-	        </a>
-	        <a href="#tab4" class="tab-link">
-              <i class="icon ion-ios7-gear size-32"></i>
-	        </a>
-	    </div>
-	</div>
-  </div>
+  </div> 
 </div>
